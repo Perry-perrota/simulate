@@ -1,0 +1,117 @@
+/* CSS styles for Arduino Projects site with dark mode */
+:root {
+  --bg-color: #f0f4f8;
+  --card-bg: #fff;
+  --text-color: #000;
+  --nav-bg: #007acc;
+  --modal-bg: #fff;
+  --link-color: #fff;
+}
+
+body.dark {
+  --bg-color: #111;
+  --card-bg: #1e1e1e;
+  --text-color: #e0e0e0;
+  --nav-bg: #222;
+  --modal-bg: #2a2a2a;
+  --link-color: #00aaff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background: var(--nav-bg);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: var(--link-color);
+  text-decoration: none;
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+nav .right {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+nav a.active {
+  text-decoration: underline;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.card {
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: var(--modal-bg);
+  color: var(--text-color);
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-content img {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--text-color);
+}
